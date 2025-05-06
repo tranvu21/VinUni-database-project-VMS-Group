@@ -69,7 +69,7 @@ The system aims to improve the efficiency of academic management and provide eas
 | **Milestone 1: Team Registration & Topic Selection** | May 6        | Finalize the team and confirm the project topic (University Activity Management System) to initiate the project. |
 | **Milestone 2: Database Design & Task Division**   |  May 11       | Create the database design (ERD, DDL) and divide tasks among team members for project execution. |
 | **Milestone 3: Backend Development (API & Authentication)** | May 18       | Develop the backend with Node.js, including user authentication and basic CRUD functionality for managing students, professors, and staff. |
-| **Milestone 4: Frontend Development & Integration (Run parallel with milestone 3)** | Tuesday, May 20       | Build the frontend interface and integrate it with the backend API, ensuring role-based access to system features. |
+| **Milestone 4: Frontend Development & Integration (Run parallel with milestone 3)** |  May 20       | Build the frontend interface and integrate it with the backend API, ensuring role-based access to system features. |
 | **Milestone 5: Role-based Features Implementation, Testing** | May 22       | Implement role-specific features for students, professors, and staff, and ensure correct access and functionality for each user type. |
 | **Milestone 6: Documentation & Presentation** | May 26     | Conduct final testing, prepare documentation, and create the presentation slide to showcase the system and its functionalities. |
 
