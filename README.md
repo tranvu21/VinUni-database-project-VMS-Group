@@ -2,7 +2,7 @@
 ## Team Member
 - Tran Anh Vu - V202100569 
 - Nguyen Nhat Minh - V202100523 
-- Nguyen Hoang Son - V202100
+- Nguyen Hoang Son - V202100578
 ## 📄 Project Description
 
 The **University Activity Management System (UAMS)** is designed to help colleges and universities manage various academic and administrative activities. The system allows users with different roles, such as students, professors, and staff, to interact with the database based on their access rights. 
