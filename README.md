@@ -80,4 +80,6 @@ The system aims to improve the efficiency of academic management and provide eas
 
 ---
 
+## Testing optimization
 
+To locally verify query optimization results, run optimization/DDL_script.sql to re-create the database and add some synthetic data, and see the result before tuning. After that, execute the index_partition.sql in the same folder to see the result after optimization.
