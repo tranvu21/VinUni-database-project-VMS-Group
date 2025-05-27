@@ -1,4 +1,7 @@
 # University Activity Management System
+
+🔗 **Live Demo**: [https://vinuni-database-project-cloned.vercel.app/dashboard](https://vinuni-database-project-cloned.vercel.app/dashboard)
+
 ## Team Member
 - Tran Anh Vu - V202100569 
 - Nguyen Nhat Minh - V202100523 
