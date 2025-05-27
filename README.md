@@ -1,4 +1,8 @@
 # University Activity Management System
+
+[![Live Demo](https://img.shields.io/badge/Visit-Live%20Demo-28a745?style=for-the-badge&logo=vercel&logoColor=white)](https://vinuni-database-project-cloned.vercel.app/dashboard)
+
+
 ## Team Member
 - Tran Anh Vu - V202100569 
 - Nguyen Nhat Minh - V202100523 
