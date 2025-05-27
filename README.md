@@ -1,6 +1,6 @@
 # University Activity Management System
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-blue?style=for-the-badge)](https://vinuni-database-project-cloned.vercel.app/dashboard)
+[![Live Demo](https://img.shields.io/badge/Visit-Live%20Demo-28a745?style=for-the-badge&logo=vercel&logoColor=white)](https://vinuni-database-project-cloned.vercel.app/dashboard)
 
 
 ## Team Member
