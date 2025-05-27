@@ -54,3 +54,23 @@ FROM Course c
 JOIN Section s ON c.course_id = s.course_id
 LEFT JOIN Professor p ON s.professor_id = p.professor_id
 LEFT JOIN User u ON p.professor_id = u.user_id;
+
+-- View: All users for faculty
+CREATE OR REPLACE VIEW view_all_users_for_faculty AS
+SELECT 
+    u.user_id,
+    u.username,
+    u.full_name,
+    u.email,
+    u.role,
+    s.major,
+    s.enrollment_year,
+    s.gpa,
+    p.department_id AS professor_department,
+    p.salary,
+    f.position,
+    f.office
+FROM User u
+LEFT JOIN Student s ON u.user_id = s.student_id
+LEFT JOIN Professor p ON u.user_id = p.professor_id
+LEFT JOIN Faculty f ON u.user_id = f.faculty_id;
