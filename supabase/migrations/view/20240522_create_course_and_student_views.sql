@@ -38,3 +38,19 @@ JOIN Course c ON s.course_id = c.course_id
 JOIN Professor p ON s.professor_id = p.professor_id
 JOIN User u ON p.professor_id = u.user_id
 WHERE u.role = 'professor';
+-- View: Course sections overview for faculty
+CREATE OR REPLACE VIEW view_faculty_sections AS
+SELECT 
+    c.course_id,
+    c.title AS course_title,
+    s.section_id,
+    s.semester,
+    s.year,
+    s.capacity,
+    s.registered_count,
+    s.registration_deadline,
+    u.full_name AS professor_name
+FROM Course c
+JOIN Section s ON c.course_id = s.course_id
+LEFT JOIN Professor p ON s.professor_id = p.professor_id
+LEFT JOIN User u ON p.professor_id = u.user_id;

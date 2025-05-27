@@ -1,0 +1,105 @@
+
+\section{SQL Integration: Views, Triggers, and Procedures}
+
+This section documents all views, triggers, and stored procedures implemented in the university database system. Each SQL object is presented with its definition and an explanation of its purpose and logic.
+
+\subsection{Views}
+
+\textbf{view\_student\_courses}
+\begin{verbatim}
+CREATE OR REPLACE VIEW view_student_courses AS
+SELECT ...
+\end{verbatim}
+\textit{Shows each student's enrolled courses, with schedule and grades. Combines Enrollment, User, Section, Course, and Schedule tables.}
+
+\textbf{view\_professor\_sections}
+\begin{verbatim}
+CREATE OR REPLACE VIEW view_professor_sections AS
+SELECT ...
+\end{verbatim}
+\textit>Lists all teaching assignments for professors, linking Section, Course, and User.}
+
+\textbf{view\_faculty\_sections}
+\begin{verbatim}
+CREATE OR REPLACE VIEW view_faculty_sections AS
+SELECT ...
+\end{verbatim}
+\textit{Allows faculty to track created courses and assigned professors with scheduling info.}
+
+
+\subsection{Triggers}
+
+\textbf{trg\_check\_registration\_deadline}
+\begin{verbatim}
+BEFORE INSERT ON Enrollment ...
+\end{verbatim}
+\textit{Prevents students from enrolling after the registration deadline for a section.}
+
+\textbf{trg\_check\_section\_capacity}
+\begin{verbatim}
+BEFORE INSERT ON Enrollment ...
+\end{verbatim}
+\textit{Enforces section capacity limits. Prevents enrollment if full.}
+
+\textbf{trg\_after\_enrollment\_delete}
+\begin{verbatim}
+AFTER DELETE ON Enrollment ...
+\end{verbatim}
+\textit{Decreases the registered student count when a student drops a course.}
+
+\textbf{trg\_increment\_registered\_count}
+\begin{verbatim}
+AFTER INSERT ON Enrollment ...
+\end{verbatim}
+\textit{Automatically increases the registered count when a student successfully enrolls.}
+
+\textbf{trg\_enforce\_unique\_schedule}
+\begin{verbatim}
+BEFORE INSERT ON Schedule ...
+\end{verbatim}
+\textit{Prevents duplicate schedule entries for a section (same room, day, time).}
+
+\textbf{trg\_on\_user\_create}
+\begin{verbatim}
+BEFORE INSERT ON User ...
+\end{verbatim}
+\textit{Normalizes email to lowercase and trims full name on user creation.}
+
+\textbf{trg\_on\_user\_delete}
+\begin{verbatim}
+AFTER DELETE ON User ...
+\end{verbatim}
+\textit{Cleans up role-specific data from Student, Professor, and Faculty tables.}
+
+
+\subsection{Stored Procedures}
+
+\textbf{sp\_register\_student\_to\_section}
+\begin{verbatim}
+INSERT INTO Enrollment ...
+\end{verbatim}
+\textit{Registers a student into a course section. Triggers handle validation.}
+
+\textbf{sp\_update\_student\_grade}
+\begin{verbatim}
+UPDATE Enrollment SET grade ...
+\end{verbatim}
+\textit{Allows a professor to update a student’s grade, only if they own the section.}
+
+\textbf{sp\_add\_student}
+\begin{verbatim}
+INSERT INTO User and Student ...
+\end{verbatim}
+\textit{Creates a new student account and inserts academic profile.}
+
+\textbf{sp\_faculty\_create\_course\_and\_section}
+\begin{verbatim}
+INSERT INTO Course and Section ...
+\end{verbatim}
+\textit{Faculty creates a new course and an initial section in a single transaction.}
+
+\textbf{sp\_professor\_manage\_schedule}
+\begin{verbatim}
+INSERT INTO Schedule (loop through days) ...
+\end{verbatim}
+\textit{Allows professors to bulk-assign weekly schedule for their section.}
