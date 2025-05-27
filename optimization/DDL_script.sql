@@ -202,25 +202,6 @@ INSERT INTO Department(name, office_location) VALUES ('Engineering', 'B101');
 -- Insert 1000 students
 DELIMITER //
 
-CREATE PROCEDURE sp_generate_students(IN p_start INT, IN p_end INT)
-BEGIN
-    DECLARE i INT DEFAULT p_start;
-    WHILE i <= p_end DO
-        INSERT INTO User (username, password, email, full_name, role)
-        VALUES (
-            CONCAT('student', i),                      -- username
-            'password',                                -- password
-            CONCAT('student', i, '@uni.edu'),          -- email
-            CONCAT('Student ', i),                     -- full_name
-            'student'                                  -- role
-        );
-
-        INSERT INTO Student (student_id, major, enrollment_year)
-        VALUES (LAST_INSERT_ID(), 'Engineering', FLOOR(2022 + RAND() * 3));  -- 2022–2024
-
-        SET i = i + 1;
-    END WHILE;
-END;
 //
 
 DELIMITER ;
