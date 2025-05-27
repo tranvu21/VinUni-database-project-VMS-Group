@@ -2,10 +2,14 @@
 -- STEP 3: ADD INDEXES + PARTITIONING
 -- =============================
 USE uni;
--- Indexes
-CREATE INDEX idx_user_full_name ON User(full_name);
-CREATE INDEX idx_enrollment_section ON Enrollment(section_id);
+-- Improve filtering by section (used during joins)
+CREATE INDEX idx_enrollment_section_id ON Enrollment(section_id);
 
+-- Improve year-based filtering (enables efficient partitioning)
+CREATE INDEX idx_enrolled_year ON Enrollment(enrolled_year);
+
+-- Support search features if needed
+CREATE INDEX idx_user_full_name ON User(full_name);
 -- Add enrolled_year column (if not already)
 
 -- Trigger to populate enrolled_year already assumed in schema
